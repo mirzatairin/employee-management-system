@@ -42,17 +42,17 @@ cd backend-python
 pip install -r requirements.txt
 python app.py
 4. Run .NET Backend
-dotnet run
+		dotnet run
 📡 Example API (Prediction)
 POST /predict-salary
 Example JSON:
-{
-"experience": 3,
-"attendance_rate": 0.9,
-"department_Finance": 0,
-"department_HR": 1,
-"department_IT": 0
-}
+		{
+		"experience": 3,
+		"attendance_rate": 0.9,
+		"department_Finance": 0,
+		"department_HR": 1,
+		"department_IT": 0
+		}
 
 
 🎯 Skills Demonstrated
