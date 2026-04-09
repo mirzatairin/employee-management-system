@@ -1,0 +1,16 @@
+USE employee_management;
+
+INSERT INTO departments (department_name)
+VALUES ('IT'), ('HR'), ('Finance');
+
+INSERT INTO employees (name, email, department_id, salary, join_date)
+VALUES
+('Alice', 'alice@mail.com', 1, 50000, '2022-01-01'),
+('Bob', 'bob@mail.com', 2, 40000, '2021-06-10'),
+('Charlie', 'charlie@mail.com', 3, 60000, '2020-03-20');
+
+INSERT INTO attendance (emp_id, date, status)
+VALUES
+(1, '2024-04-01', 'Present'),
+(2, '2024-04-01', 'Absent'),
+(3, '2024-04-01', 'Present');

@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS employee_management;
+USE employee_management;
+
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY AUTO_INCREMENT,
+    department_name VARCHAR(100)
+);
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    department_id INT,
+    salary DECIMAL(10,2),
+    join_date DATE,
+    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+);
+
+CREATE TABLE attendance (
+    attendance_id INT PRIMARY KEY AUTO_INCREMENT,
+    emp_id INT,
+    date DATE,
+    status ENUM('Present','Absent','Leave'),
+    FOREIGN KEY (emp_id) REFERENCES employees(emp_id)
+);
+
+CREATE TABLE leaves (
+    leave_id INT PRIMARY KEY AUTO_INCREMENT,
+    emp_id INT,
+    start_date DATE,
+    end_date DATE,
+    reason TEXT,
+    status VARCHAR(20),
+    FOREIGN KEY (emp_id) REFERENCES employees(emp_id)
+);
